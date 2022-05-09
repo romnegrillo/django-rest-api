@@ -7,3 +7,10 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def sale_price(self):
+        return float(self.price) * 0.05
+
+    def get_discount(self):
+        return 100
