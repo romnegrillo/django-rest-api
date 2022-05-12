@@ -22,9 +22,9 @@ urlpatterns = [
     path("delete/<int:pk>", ProductDeleteAPIView.as_view()),
     
     # Testing of function-based equivalent views for:
-    # CreateView
-    # DetailView
-    # ListView
+    # - CreateView
+    # - DetailView
+    # - ListView
     # path("<int:pk>/", list_create_products, name="product-retrieve"),
     # path("", list_create_products, name="product-list-create"),
 

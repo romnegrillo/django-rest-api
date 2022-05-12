@@ -1,12 +1,13 @@
 from rest_framework import generics, mixins, permissions, authentication
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import permissions
 
 from django.shortcuts import get_object_or_404
 
 from .models import Product
 from .serializers import ProductSerializer
-
+from .permissions import IsStaffEditorPermission
 
 class ProductRetrieveAPIView(generics.RetrieveAPIView):
     """
@@ -21,7 +22,7 @@ class ProductRetrieveAPIView(generics.RetrieveAPIView):
     serializer_class = ProductSerializer
     lookup_field = "pk"
     authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsStaffEditorPermission]
 
 
 class ProductCreateAPIView(generics.CreateAPIView):
