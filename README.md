@@ -1,6 +1,6 @@
 # Django REST Framework
 
-Sample Backend Django App for practicing Django REST Framework for creating RESTful APIs. I followed the Django REST API documentation  as well as from tutourial by Coding Entrepreneur in this project.
+Sample Backend Django App for practicing Django REST Framework for creating RESTful APIs. I followed the Django REST API documentation  as well as from tutorial by Coding Entrepreneur in this project.
 
 Topic Covered:
 - Creating a Python API Client
