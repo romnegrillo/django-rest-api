@@ -21,9 +21,6 @@ class ProductRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_field = "pk"
-    authentication_classes = [authentication.SessionAuthentication]
-    permission_classes = [IsStaffEditorPermission]
-
 
 class ProductCreateAPIView(generics.CreateAPIView):
     """
@@ -73,6 +70,13 @@ class ProductListCreateAPIView(generics.ListCreateAPIView):
 
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    authentication_classes = [
+        authentication.SessionAuthentication, 
+        authentication.TokenAuthentication
+    ]
+    permission_classes = [permissions.IsAdminUser, IsStaffEditorPermission]
+    #permission_classes = [permissions.IsAuthenticated]
+
 
     def perform_create(self, serializer):
         title = serializer.validated_data.get("title")

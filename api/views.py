@@ -55,3 +55,7 @@ def api_home(request):
 
     return Response(data)
 
+@api_view(["GET", "POST"])
+def api_hello(request):
+    print("Hello world from API!")
+    return JsonResponse({"message": "Hello world from API!"})

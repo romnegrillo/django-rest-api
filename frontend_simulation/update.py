@@ -1,6 +1,6 @@
 import requests
 
-endpoint = "http://localhost:8000/api/products/update/14"
+endpoint = "http://localhost:8000/api/products/update/14/"
 
 reponse = requests.put(endpoint,
                         json={
